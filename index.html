@@ -57,12 +57,16 @@
   .leftcolumn {   
     float: left;
     width: 75%;
-  }   
+  }
+
+  .flexcol {
+    display: flex;
+    flex-direction: column;
+  }
 
   .flexrow{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
   }
   /* Right column */
   .rightcolumn {
@@ -160,6 +164,7 @@
 <div class="row">
   <div class="leftcolumn">
     <div class="flexrow">
+      <div class="flexcol">
         <div class="card">
           <h2>PROJECTS</h2>
           <!-- <h5>Title description, Dec 7, 2017</h5>
@@ -190,6 +195,8 @@
             Using iverilog and verilator these FSMs were rigorously tested in order to ensure the proper changing of states. 
             </p>
         </div>
+      </div>
+      <div class="flexcol">
         <div class="card">
           <h3><a href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
           <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
@@ -198,6 +205,7 @@
             portion of the cluster in order maintain stability. The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
             </p>
         </div>
+      </div>
     </div>
   </div>
   <div class="rightcolumn">
