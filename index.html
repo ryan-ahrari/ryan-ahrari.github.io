@@ -57,25 +57,22 @@
   .leftcolumn {   
     float: left;
     width: 75%;
-    background-color: rgba(35, 67, 146, 0.55);
   }
 
   .flexcol {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
   }
 
   .flexrow{
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
   }
   /* Right column */
   .rightcolumn {
     float: left;
     width: 25%;
-    background-color: rgba(35, 67, 146, 0.55);
+    background: #9c9c9c;
     padding-left: 20px;
   }
 
@@ -106,6 +103,7 @@
 
   /* Add a card effect for articles */
   .card {
+    background-color: rgba(35, 67, 146, 0.55);
     padding: 20px;
     margin-top: 20px;
     /* text-align: center; */
@@ -166,12 +164,12 @@
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-      <h2>PROJECTS</h2>
-      <!-- <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
-    </div>
+          <h2>PROJECTS</h2>
+          <!-- <h5>Title description, Dec 7, 2017</h5>
+          <div class="fakeimg" style="height:200px;">Image</div>
+          <p>Some text..</p>
+          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
+        </div>
     <div class="flexcol">
       <div class="flexrow">
         <div class="card">
@@ -206,6 +204,9 @@
             For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod. These pods have a risk of becoming unstable over time and needing to be moved to a new
             portion of the cluster in order maintain stability. The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
             </p>
+        </div>
+        <div class="card">
+          
         </div>
       </div>
     </div>
