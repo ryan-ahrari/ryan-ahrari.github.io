@@ -181,11 +181,11 @@
     const scrollPercentage = Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight), 1);
     
     // Adjust gradient stops for a smoother transition
-    const startStop = 100 - scrollPercentage * 70; // Adjust range for smoothness
-    const endStop = scrollPercentage * 70; // Adjust range for smoothness
+    const startStop = 100 - scrollPercentage * 100; // Adjust range for smoothness
+    const endStop = scrollPercentage * 100; // Adjust range for smoothness
     
     // Dynamically set the gradient with calculated stops
-    document.body.style.background = `linear-gradient(to bottom, #9c9c9c ${startStop}%, #494949 ${endStop}%)`;
+    document.body.style.background = `linear-gradient(to bottom, #9c9c9c ${startStop}%, #767676 50% ,#494949 ${endStop}%)`;
 });
   </script>
 </head>
