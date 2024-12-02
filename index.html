@@ -139,6 +139,17 @@
     margin-top: 20px;
   }
 
+  .portfolio-item {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {   
@@ -191,7 +202,33 @@
           <p>Some text..</p>
           <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
         </div>
-    <div class="flexcol">
+        <section id="portfolio">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="portfolio-item">
+                <h3><a class="noDecoration" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
+                <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
+                <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
+                  The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
+                  investment that will be needed.</p>
+                </div>
+              <div class="portfolio-item">
+                <h3><a class="noDecoration" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
+                <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
+                <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
+                    to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
+                </p>
+              </div>
+              <div class="portfolio-item">
+                <h3><a class="noDecoration" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
+                <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
+                <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
+                  For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
+                  The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
+                  </p>
+              </div>
+          </div>
+        </section>
+        <!-- <div class="flexcol">
       <div class="flexrow">
         <div class="card">
           <h3><a class="noDecoration" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
@@ -216,7 +253,7 @@
             For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
             The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
             </p>
-        </div>
+        </div> -->
         <!-- <div class="card">
           <pre>
 
