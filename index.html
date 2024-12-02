@@ -13,6 +13,9 @@
     transition: background 0.2s ease-out;
   }
 
+  body.scrolled {
+    background-color: #767676;
+  }
   /* Header/Blog Title */
   .header {
     width: 100%;
@@ -161,16 +164,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script>
-    window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY; // Distance scrolled
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollRatio = scrollY / docHeight;
-
-    // Calculate color
-    const red = Math.floor(255 * (1 - scrollRatio));
-    const blue = Math.floor(255 * scrollRatio);
-
-    document.body.style.background = `rgb(${#9c9c9c}, 0, ${#767676})`;
+   window.addEventListener('scroll', () => {
+    document.body.classList.toggle('scrolled', window.scrollY > 50);
 });
   </script>
 </head>
