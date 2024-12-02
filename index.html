@@ -10,7 +10,7 @@
     font-family: Arial;
     margin: 0;
     background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #ffffff 100%);
-    transition: background 0.5s ease-out;
+    transition: background 0.2s ease-in-out;
   }
 
   .scrolled {
@@ -177,16 +177,16 @@
 
   <script>
   window.addEventListener('scroll', () => {
-    // Calculate the scroll percentage, ensuring it's capped at 1 (100%)
+    // Calculate the scroll percentage, normalized between 0 and 1
     const scrollPercentage = Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight), 1);
-    
-    // Adjust gradient stops for a smoother transition
-    const startStop = 100 - scrollPercentage * 100; // Adjust range for smoothness
-    const endStop = scrollPercentage * 100; // Adjust range for smoothness
-    
-    // Dynamically set the gradient with calculated stops
-    document.body.style.background = `linear-gradient(to bottom, #9c9c9c ${startStop}%, #767676 50% ,#494949 ${endStop}%)`;
-});
+
+    // Adjust gradient stops for smooth transition
+    const startColorStop = Math.max(50 - scrollPercentage * 50, 0); // Gradually moves from 50% to 0%
+    const endColorStop = Math.min(50 + scrollPercentage * 50, 100); // Gradually moves from 50% to 100%
+
+    // Update the background with dynamic gradient stops
+    document.body.style.background = `linear-gradient(to bottom, #9c9c9c ${startColorStop}%, #494949 ${endColorStop}%)`;
+    });
   </script>
 </head>
 <body>
