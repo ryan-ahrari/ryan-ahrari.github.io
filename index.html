@@ -177,16 +177,26 @@
 
   <script>
   window.addEventListener('scroll', () => {
-    // Calculate the scroll percentage, normalized between 0 and 1
-    const scrollPercentage = Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight), 1);
+    // Get the current scroll position and the total scrollable height
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.body.scrollHeight - window.innerHeight;
 
-    // Adjust gradient stops for smooth transition
-    const startColorStop = Math.max(50 - scrollPercentage * 50, 0); // Gradually moves from 50% to 0%
-    const endColorStop = Math.min(50 + scrollPercentage * 50, 100); // Gradually moves from 50% to 100%
+    // Calculate the scroll percentage (0 to 1)
+    const scrollPercentage = Math.min(scrollTop / scrollHeight, 1);
 
-    // Update the background with dynamic gradient stops
-    document.body.style.background = `linear-gradient(to bottom, #9c9c9c ${startColorStop}%, #494949 ${endColorStop}%)`;
-    });
+    // Interpolate between colors based on scroll percentage
+    const startColor = [156, 156, 156]; // RGB for #9c9c9c
+    const endColor = [73, 73, 73]; // RGB for #494949
+    const interpolatedColor = startColor.map((start, i) =>
+        Math.round(start + (endColor[i] - start) * scrollPercentage)
+    );
+
+    // Convert the interpolated RGB to a hex color
+    const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
+
+    // Apply the gradient to the background
+    document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+  });
   </script>
 </head>
 <body>
