@@ -146,7 +146,7 @@
     text-align: center;
     background: #767676;
     margin-top: 20px;
-    transition: background 0.05s ease-in-out;
+    transition: background 0.01s ease-in-out;
   }
 
   .portfolio-item {
@@ -185,16 +185,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script>
-  function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-    };
-  }
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+          const context = this;
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(context, args), wait);
+      };
+    }
 
-  const updateGradient = () => {
+    const updateGradient = () => {
       const scrollTop = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
       const scrollPercentage = Math.min(scrollTop / scrollHeight, 1);
@@ -213,7 +213,7 @@
       footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
     };
 
-  window.addEventListener('scroll', debounce(updateGradient, 30));
+    window.addEventListener('scroll', debounce(updateGradient, 50));
   </script>
 </head>
 <body>
