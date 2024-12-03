@@ -24,7 +24,7 @@
     padding: 30px;
     text-align: center;
     background: rgba(35, 67, 146, 0.55);
-    transition: opacity 0.5s ease-out;
+    transition: opacity 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   .header h1 {
@@ -225,7 +225,7 @@
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
       const header = document.querySelector('.header');
-      const opacity = 1 - scrollPercentage; // Decrease opacity as you scroll
+      const opacity = Math.max(0, 1 - scrollPercentage * 2); // Decrease opacity as you scroll
       header.style.opacity = opacity;
     };
 
