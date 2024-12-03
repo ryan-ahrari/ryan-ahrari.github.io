@@ -229,7 +229,7 @@
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;    
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
-      const shouldFade = scrollPercentage > 0.3;
+      const shouldFade = scrollPercentage > 0.1;
       if(shouldFade !== isFaded){
         isFaded = shouldFade;
 
