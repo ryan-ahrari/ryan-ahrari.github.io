@@ -144,9 +144,8 @@
   .footer {
     padding: 20px;
     text-align: center;
-    background: #767676;
+    background: none;
     margin-top: 20px;
-    transition: background 0.01s ease-in-out;
   }
 
   .portfolio-item {
@@ -209,8 +208,8 @@
       
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
       
-      const footer = document.querySelector('.footer');
-      footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+      // const footer = document.querySelector('.footer');
+      // footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
     };
 
     window.addEventListener('scroll', debounce(updateGradient, 100));
