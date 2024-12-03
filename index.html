@@ -57,11 +57,10 @@
     color: black;
   }
 
-  /* Create two unequal columns that floats next to each other */
   /* Left column */
   .leftcolumn {   
-    float: left;
-    width: 75%;
+    flex: 3;
+    padding-right: 20px;
   }
 
   .flexcol {
@@ -75,10 +74,9 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-  /* Right column */
+
   .rightcolumn {
-    float: left;
-    width: 25%;
+    flex: 1;
     background: #9c9c9c;
     padding-left: 20px;
   }
@@ -119,6 +117,11 @@
     margin-top: 20px;
     flex-grow: 1;
     /* text-align: center; */
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   /* Clear floats after the columns */
@@ -195,7 +198,7 @@
       const interpolatedColor = startColor.map((start, i) =>
           Math.round(start + (endColor[i] - start) * scrollPercentage)
       );
-      
+
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
   };
