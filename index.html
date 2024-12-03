@@ -24,7 +24,7 @@
     padding: 30px;
     text-align: center;
     background: rgba(35, 67, 146, 0.55);
-    transition: opacity 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: opacity 0.1s ease-out;
   }
 
   .header h1 {
@@ -209,6 +209,8 @@
       };
     }
 
+    let lastScrollY = 0; // Keep track of last scoll position to prevent flashing
+
     const updateGradient = () => {
       const scrollTop = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
@@ -225,12 +227,20 @@
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
       const header = document.querySelector('.header');
-      const fadeSpeed = 2.5;
+      const fadeSpeed = 3;
       const opacity = Math.max(0, 1 - (scrollPercentage * fadeSpeed)); // Decrease opacity as you scroll
       header.style.opacity = opacity;
+
+      if (scollTop > lastScrollY) {
+        header.style.transition = 'opacity 0.1s ease-out';
+      } else {
+        header.style.transition = 'opacity 0.05s ease-out';
+      }
+
+      lastScrollY = scrollTop;
     };
 
-    window.addEventListener('scroll', debounce(updateGradient, 100));
+    window.addEventListener('scroll', debounce(updateGradient, 50));
   </script>
 </head>
 <body>
