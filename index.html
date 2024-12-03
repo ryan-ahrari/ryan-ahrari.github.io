@@ -211,34 +211,43 @@
     }
 
     let lastScrollY = 0; // Keep track of last scoll position to prevent flashing
+    let ticking = false;
 
     const updateGradient = () => {
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercentage = Math.min(scrollTop / scrollHeight, 1);
+      if(!ticking){
+        window.requestAnimationFrame(() =>{
+          const scrollTop = window.scrollY;
+          const scrollHeight = document.body.scrollHeight - window.innerHeight;
+          const scrollPercentage = Math.min(scrollTop / scrollHeight, 1);
 
-      const startColor = [156, 156, 156]; // RGB for #9c9c9c
-      const endColor = [73, 73, 73]; // RGB for #494949
-      const interpolatedColor = startColor.map((start, i) =>
-          Math.round(start + (endColor[i] - start) * scrollPercentage)
-      );
+          const startColor = [156, 156, 156]; // RGB for #9c9c9c
+          const endColor = [73, 73, 73]; // RGB for #494949
+          const interpolatedColor = startColor.map((start, i) =>
+              Math.round(start + (endColor[i] - start) * scrollPercentage)
+          );
 
-      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
-      
-      document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+          const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
+          
+          document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
-      const header = document.querySelector('.header');
-      const fadeSpeed = 3;
-      const opacity = Math.max(0, 1 - (scrollPercentage * fadeSpeed)); // Decrease opacity as you scroll
-      header.style.opacity = opacity;
+          const header = document.querySelector('.header');
+          const fadeSpeed = 3;
+          const opacity = Math.max(0, 1 - (scrollPercentage * fadeSpeed)); // Decrease opacity as you scroll
+          header.style.opacity = opacity;
 
-      if (scollTop > lastScrollY) {
-        header.style.transition = 'opacity 0.15s ease-out';
-      } else {
-        header.style.transition = 'opacity 0.05s ease-out';
+          if (scollTop > lastScrollY) {
+            header.style.transition = 'opacity 0.15s ease-out';
+          } else {
+            header.style.transition = 'opacity 0.05s ease-out';
+          }
+
+          lastScrollY = scrollTop;
+
+          ticking = false;
+        });
+        
+        ticking = true;
       }
-
-      lastScrollY = scrollTop;
     };
 
     window.addEventListener('scroll', debounce(updateGradient, 50));
