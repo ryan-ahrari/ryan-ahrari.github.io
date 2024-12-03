@@ -146,6 +146,7 @@
     text-align: center;
     background: #767676;
     margin-top: 20px;
+    transition: background 0.1s ease-in-out;
   }
 
   .portfolio-item {
@@ -205,8 +206,12 @@
       );
 
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
+      
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
-  };
+      
+      const footer = document.querySelector('.footer');
+      footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+    };
 
   window.addEventListener('scroll', debounce(updateGradient, 30));
   </script>
