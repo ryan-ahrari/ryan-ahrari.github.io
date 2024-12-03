@@ -15,19 +15,24 @@
     transition: background 0.5s ease-in-out;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 97%; /* Smaller than the screen */
-    height: 97%;
-    background: url('Images/overlay-image.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.5;
-    z-index: -1;
-    pointer-events: none
+  .header, .footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #9c9c9c, #767676); /* Only gradient */
+    color: #fff;
+  }
+
+  .main-content {
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #ffffff 100%), 
+                url('path-to-your-image.jpg') no-repeat center center;
+    background-size: cover; /* Scale the image */
+    background-attachment: fixed; /* Parallax effect */
+    padding: 20px;
+    color: #333;
   }
 
   .scrolled {
@@ -173,7 +178,7 @@
   .footer {
     padding: 20px;
     text-align: center;
-    background: none;
+    background:  linear-gradient(to bottom, #767676, #494949);
     margin-top: 20px;
   }
 
@@ -289,95 +294,97 @@
     <h1>Ryan Ahrari</h1>
   </div>
 
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-          <h2>PROJECTS</h2>
-          <!-- <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
-        <section id="portfolio">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div class="portfolio-item">
-                <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
-                <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
-                <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
-                  The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
-                  investment that will be needed.</p>
-                </div>
-              <div class="portfolio-item">
-                <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
-                <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
-                <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
-                    to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
+  <div class="main-content">
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+              <h2>PROJECTS</h2>
+              <!-- <h5>Title description, Dec 7, 2017</h5>
+              <div class="fakeimg" style="height:200px;">Image</div>
+              <p>Some text..</p>
+              <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
+            <section id="portfolio">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div class="portfolio-item">
+                    <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
+                    <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
+                    <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
+                      The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
+                      investment that will be needed.</p>
+                    </div>
+                  <div class="portfolio-item">
+                    <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
+                    <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
+                    <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
+                        to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
+                    </p>
+                  </div>
+                  <div class="portfolio-item">
+                    <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
+                    <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
+                    <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
+                      For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
+                      The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
+                      </p>
+                  </div>
+              </div>
+            </section>
+            <!-- <div class="flexcol">
+          <div class="flexrow">
+            <div class="card">
+              <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
+              <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
+              <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
+                The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
+                investment that will be needed.</p>
+            </div>
+            <div class="card">
+              <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
+              <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
+              <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
+                to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
                 </p>
-              </div>
-              <div class="portfolio-item">
-                <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
-                <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
-                <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
-                  For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
-                  The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
-                  </p>
-              </div>
+            </div>
           </div>
-        </section>
-        <!-- <div class="flexcol">
-      <div class="flexrow">
-        <div class="card">
-          <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
-          <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
-          <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
-            The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
-            investment that will be needed.</p>
+          <div class="flexrow">
+            <div class="card">
+              <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
+              <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
+              <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
+                For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
+                The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
+                </p>
+            </div> -->
+            <!-- <div class="card">
+              <pre>
+  
+              </pre>
+            </div> -->
+          </div>
         </div>
+      <div class="rightcolumn">
         <div class="card">
-          <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
-          <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
-          <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
-            to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
-            </p>
+        <!-- <div class="card" style="height:800px;"> -->
+          <h2>About Me</h2>
+          <div class="headshot_image"><img src="/Images/Headshot_Image.jpg" alt="Photo of Me :)" style="width:100%; padding: 20px; border-radius: 50%;"></div>
+          <p>Hello and welcome to the website of Ryan Ahrari. I am a recent graduate from the University of California 
+            - Santa Cruz where I received my Master of Science in Computer Science and Engineering. I am actively seeking
+            a full time Software Engineering position and am currently based in the San Francisco Bay Area.</p>
         </div>
-      </div>
-      <div class="flexrow">
-        <div class="card">
-          <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
-          <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
-          <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
-            For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
-            The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
-            </p>
-        </div> -->
         <!-- <div class="card">
-          <pre>
-
-          </pre>
+          <h3>Popular Post</h3>
+          <div class="fakeimg"><p>Image</p></div>
+          <div class="fakeimg"><p>Image</p></div>
+          <div class="fakeimg"><p>Image</p></div>
         </div> -->
+        <div class="card">
+          <h3>Follow Me</h3>
+          <p><a class="a" href="https://www.linkedin.com/in/ryan-ahrari/">On LinkedIn</a></p>
+          <p><a class="a" href="https://github.com/ryan-ahrari">On GitHub</a></p>
+        </div>
       </div>
-    </div>
-  <div class="rightcolumn">
-    <div class="card">
-    <!-- <div class="card" style="height:800px;"> -->
-      <h2>About Me</h2>
-      <div class="headshot_image"><img src="/Images/Headshot_Image.jpg" alt="Photo of Me :)" style="width:100%; padding: 20px; border-radius: 50%;"></div>
-      <p>Hello and welcome to the website of Ryan Ahrari. I am a recent graduate from the University of California 
-        - Santa Cruz where I received my Master of Science in Computer Science and Engineering. I am actively seeking
-        a full time Software Engineering position and am currently based in the San Francisco Bay Area.</p>
-    </div>
-    <!-- <div class="card">
-      <h3>Popular Post</h3>
-      <div class="fakeimg"><p>Image</p></div>
-      <div class="fakeimg"><p>Image</p></div>
-      <div class="fakeimg"><p>Image</p></div>
-    </div> -->
-    <div class="card">
-      <h3>Follow Me</h3>
-      <p><a class="a" href="https://www.linkedin.com/in/ryan-ahrari/">On LinkedIn</a></p>
-      <p><a class="a" href="https://github.com/ryan-ahrari">On GitHub</a></p>
     </div>
   </div>
-</div>
 
 <div class="footer">
   <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a class="a"  href="tel:408-816-9748">(408)816-9748</a></h3>
