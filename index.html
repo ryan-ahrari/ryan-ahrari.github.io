@@ -211,8 +211,8 @@
     }
 
     let lastScrollY = 0; // Keep track of last scoll position to prevent flashing
-    let isScrollingDown = true;
-    let ticking = false;
+    let isFaded = false;
+    // let ticking = false;
 
     const updateGradient = () => {
       
@@ -229,36 +229,17 @@
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;    
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
-      const isNowScrollingDown = scrollTop > lastScrollY;
-      if(isNowScrollingDown !== isNowScrollingDown){
-        isScrollingDown = isNowScrollingDown;
-      }
+      const shouldFade = scrollPercentage > 0.3;
+      if(shouldFade !== isFaded){
+        isFaded = shouldFade;
 
-      if(!ticking){
-        window.requestAnimationFrame(() =>{
-          const header = document.querySelector('.header');
-          const fadeSpeed = 4;
-          
-          let opacity; // Decrease opacity as you scroll
-          
-          if(isScrollingDown){
-            opacity = 1 - (scrollPercentage * fadeSpeed);
-          }else{
-            opacity = Math.min(1, 1- scrollPercentage * 2.5 + 0.1);
-          }
-
-          header.style.opacity = opacity;
-          header.style.transition = isNowScrollingDown 
+        const header = document.querySelector('.header');
+        header.style.opacity = isFaded ? 0 : 1;
+        header.style.transition = isFaded 
             ?'opacity 0.15s ease-out'
-            :'opacity 0.1s ease-out';
-
-          lastScrollY = scrollTop;
-
-          ticking = false;
-      });
-        
-        ticking = true;
+            :'opacity 0.2s ease-out';
       }
+      lastScrollY = scrollTop;
     };
 
     window.addEventListener('scroll', debounce(updateGradient, 75));
