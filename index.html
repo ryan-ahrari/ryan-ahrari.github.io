@@ -11,7 +11,7 @@
     font-family: Arial;
     margin: 0;
     background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #ffffff 100%);
-    transition: background 0.2s ease-in-out;
+    transition: background 0.5s ease-in-out;
   }
 
   .scrolled {
@@ -24,6 +24,7 @@
     padding: 30px;
     text-align: center;
     background: rgba(35, 67, 146, 0.55);
+    transition: opacity 0.3s ease-out;
   }
 
   .header h1 {
@@ -39,7 +40,7 @@
 
   .a {
     text-align: center;
-    color: inherit;
+    color: inherit!important;
     text-decoration: none!important;
   }
 
@@ -222,9 +223,10 @@
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
       
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
-      
-      // const footer = document.querySelector('.footer');
-      // footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+
+      const header = document.querySelector('.header');
+      const opacity = 1 - scrollPercentage; // Decrease opacity as you scroll
+      header.style.opacity = opacity;
     };
 
     window.addEventListener('scroll', debounce(updateGradient, 100));
