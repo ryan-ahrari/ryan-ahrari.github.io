@@ -211,6 +211,7 @@
     }
 
     let lastScrollY = 0; // Keep track of last scoll position to prevent flashing
+    let isScrollingDown = true;
     let ticking = false;
 
     const updateGradient = () => {
@@ -225,26 +226,31 @@
         Math.round(start + (endColor[i] - start) * scrollPercentage)
       );
 
-      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
-          
+      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;    
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+
+      const isNowScrollingDown = scrollTop > lastScrollY;
+      if(isNowScrollingDown !== isNowScrollingDown){
+        isScrollingDown = isNowScrollingDown;
+      }
+
       if(!ticking){
         window.requestAnimationFrame(() =>{
           const header = document.querySelector('.header');
           const fadeSpeed = 4;
-          let opacity = 1 - (scrollPercentage * fadeSpeed); // Decrease opacity as you scroll
           
-          if(scrollTop <lastScrollY){
-            opacity = Math.min(1, opacity + 0.1);
+          let opacity; // Decrease opacity as you scroll
+          
+          if(isScrollingDown){
+            opacity = 1 - (scrollPercentage * fadeSpeed);
+          }else{
+            opacity = Math.min(1, 1- scrollPercentage * 2.5 + 0.1);
           }
 
           header.style.opacity = opacity;
-
-          if (scrollTop > lastScrollY) {
-            header.style.transition = 'opacity 0.1s ease-out';
-          } else {
-            header.style.transition = 'opacity 0.05s ease-out';
-          }
+          header.style.transition = isNowScrollingDown 
+            ?'opacity 0.15s ease-out'
+            :'opacity 0.1s ease-out';
 
           lastScrollY = scrollTop;
 
@@ -255,7 +261,7 @@
       }
     };
 
-    window.addEventListener('scroll', debounce(updateGradient, 50));
+    window.addEventListener('scroll', debounce(updateGradient, 75));
   </script>
 </head>
 <body>
