@@ -60,7 +60,7 @@
   /* Left column */
   .leftcolumn {   
     flex: 3;
-    padding-right: 20px;
+    margin-right: 20px;
   }
 
   .flexcol {
@@ -77,7 +77,7 @@
 
   .rightcolumn {
     flex: 1;
-    padding-left: 20px;
+    margin-left: 20px;
   }
   /* .headshot_image{
     border-radius: 50px;
@@ -122,6 +122,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    margin: 0 20px;
   }
 
   /* Clear floats after the columns */
@@ -139,7 +140,7 @@
   .footer {
     padding: 20px;
     text-align: center;
-    background: #464646;
+    background: #767676;
     margin-top: 20px;
   }
 
@@ -203,7 +204,7 @@
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
   };
 
-  window.addEventListener('scroll', debounce(updateGradient, 100));
+  window.addEventListener('scroll', debounce(updateGradient, 30));
   </script>
 </head>
 <body>
