@@ -24,7 +24,7 @@
     padding: 30px;
     text-align: center;
     background: rgba(35, 67, 146, 0.55);
-    transition: opacity 0.3s ease-out;
+    transition: opacity 0.1s ease-out;
     opacity: 1;
   }
 
@@ -211,8 +211,8 @@
     }
 
     let lastScrollY = 0; // Keep track of last scoll position to prevent flashing
-    let isFaded = false;
-    // let ticking = false;
+    let isScrollingDown = true;
+    let ticking = false;
 
     const updateGradient = () => {
       
@@ -229,22 +229,39 @@
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;    
       document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
-      const fadeThreshold = 0.1;
-      const buffer = 0.05;
-      const shouldFade = scrollPercentage > fadeThreshold + buffer;
-      if(shouldFade !== isFaded){
-        isFaded = shouldFade;
-
-        const header = document.querySelector('.header');
-        header.style.opacity = isFaded ? 0.2: 1;
-        header.style.transition = isFaded 
-            ?'opacity 0.15s ease-out'
-            :'opacity 0.3s ease-out';
+      const isNowScrollingDown = scrollTop > lastScrollY;
+      if(isNowScrollingDown !== isNowScrollingDown){
+        isScrollingDown = isNowScrollingDown;
       }
-      lastScrollY = scrollTop;
+
+      if(!ticking){
+        window.requestAnimationFrame(() =>{
+          const header = document.querySelector('.header');
+          const fadeSpeed = 4;
+          
+          let opacity; // Decrease opacity as you scroll
+          
+          if(isScrollingDown){
+            opacity = 1 - (scrollPercentage * fadeSpeed);
+          }else{
+            opacity = Math.min(1, 1- scrollPercentage * 2.5 + 0.1);
+          }
+
+          header.style.opacity = opacity;
+          header.style.transition = isNowScrollingDown 
+            ?'opacity 0.15s ease-out'
+            :'opacity 0.05s ease-out';
+
+          lastScrollY = scrollTop;
+
+          ticking = false;
+      });
+        
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', debounce(updateGradient, 75));
+    window.addEventListener('scroll', debounce(updateGradient, 50));
   </script>
 </head>
 <body>
