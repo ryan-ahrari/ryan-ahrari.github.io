@@ -232,7 +232,7 @@
         window.requestAnimationFrame(() =>{
           const header = document.querySelector('.header');
           const fadeSpeed = 3;
-          let opacity = Math.max(0, 1 - (scrollPercentage * fadeSpeed)); // Decrease opacity as you scroll
+          let opacity = 1 - (scrollPercentage * fadeSpeed); // Decrease opacity as you scroll
           
           if(scollTop <lastScrollY){
             opacity = Math.min(1, opacity + 0.1);
