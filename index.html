@@ -11,7 +11,23 @@
     font-family: Arial;
     margin: 0;
     background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #ffffff 100%);
+    background-size: cover;
     transition: background 0.5s ease-in-out;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Smaller than the screen */
+    height: 80%;
+    background: url('images/overlay-image.jpg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none
   }
 
   .scrolled {
