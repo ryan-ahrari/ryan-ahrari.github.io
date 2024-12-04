@@ -15,14 +15,17 @@
   .main-content {
     position: relative;
     z-index: 0;
-    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
+    background: url('Images\overlay-image.jpg') no-repeat center center;
+    background-size: cover;
+    /* background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
     padding: 20px;
     min-height: 100vh;
-    transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out; */
   }
 
   .main-content::before{
-    content: "";
+    background: rgba(255, 0, 0, 0.5);
+    /* content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -32,7 +35,7 @@
     background-size: cover;
     opacity: 0.3;
     z-index: -1;
-    pointer-events: none;
+    pointer-events: none; */
   }
 
   .scrolled {
@@ -46,7 +49,7 @@
     width: 100%;
     padding: 30px;
     text-align: center;
-    background: rgba(32, 73, 176, 0.55);
+    background: rgba(35, 67, 146, 0.55);
     transition: opacity 0.1s ease-out;
     opacity: 1;
   }
