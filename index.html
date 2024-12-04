@@ -247,9 +247,6 @@
       );
 
       const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;   
-      
-      const header = document.querySelector(".header");
-      header.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
       const mainContent = document.querySelector(".main-content");
       mainContent.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
@@ -264,7 +261,7 @@
 
       if(!ticking){
         window.requestAnimationFrame(() =>{
-          //const header = document.querySelector('.header');
+          const header = document.querySelector('.header');
           const fadeSpeed = 4;
           
           let opacity; // Decrease opacity as you scroll
