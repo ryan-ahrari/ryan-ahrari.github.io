@@ -18,7 +18,6 @@
     background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
     padding: 20px;
     min-height: 100vh;
-    color: #333;
     transition: background 0.5s ease-in-out;
   }
 
@@ -27,12 +26,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 97%;
-    height: 97%;
-    background: url('Images\overlay-image.jpg');
+    width: 100%;
+    height: 100%;
+    background: url('Images\overlay-image.jpg') no-repeat center center;
     background-size: cover;
     opacity: 0.3;
     z-index: -1;
+    pointer-events: none;
   }
 
   .scrolled {
