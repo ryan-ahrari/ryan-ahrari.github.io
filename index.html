@@ -10,29 +10,29 @@
     color: #040404;
     font-family: Arial;
     margin: 0;
-    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #ffffff 100%);
-    background-size: cover;
-    transition: background 0.5s ease-in-out;
-  }
-
-  .header, .footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(to bottom, #9c9c9c, #767676); /* Only gradient */
-    color: #fff;
   }
 
   .main-content {
     position: relative;
     z-index: 0;
-    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #ffffff 100%), 
-                url('path-to-your-image.jpg') no-repeat center center;
-    background-size: cover; /* Scale the image */
-    background-attachment: fixed; /* Parallax effect */
+    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
     padding: 20px;
+    min-height: 100vh;
     color: #333;
+    transition: background 0.5s ease-in-out;
+  }
+
+  .main-content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 97%;
+    background: url('Images\overlay-image.jpg');
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
   }
 
   .scrolled {
@@ -41,6 +41,8 @@
 
   /* Header/Blog Title */
   .header {
+    position: relative;
+    z-index: 1;
     width: 100%;
     padding: 30px;
     text-align: center;
@@ -178,8 +180,10 @@
   .footer {
     padding: 20px;
     text-align: center;
-    background:  linear-gradient(to bottom, #767676, #494949);
     margin-top: 20px;
+    z-index: 1;
+    background: linear-gradient(to bottom, #767676, #494949);
+    transition: background 0.5s ease-in-out;
   }
 
   .portfolio-item {
@@ -243,8 +247,13 @@
         Math.round(start + (endColor[i] - start) * scrollPercentage)
       );
 
-      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;    
-      document.body.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;   
+
+      const mainContent = document.querySelector(".main-content");
+      mainContent.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
+
+      const footer = document.querySelector(".footer");
+      footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
       const isNowScrollingDown = scrollTop > lastScrollY;
       if(isNowScrollingDown !== isNowScrollingDown){
