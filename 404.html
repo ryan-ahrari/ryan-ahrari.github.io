@@ -1,0 +1,8 @@
+<script type="text/javascript">
+    var path = window.location.pathname;
+    if (path.substr(-1) == '/') {
+        path += 'index.html';
+    }
+    var newUrl = path + '.html';
+    window.location.replace(newUrl);
+</script>
