@@ -1,235 +1,243 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <style>
-  * {
-    box-sizing: border-box;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    color: #040404;
-    font-family: Arial;
-    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
-    margin: 0;
-    height: 100%;
-  }
+    body {
+      color: #040404;
+      font-family: Arial;
+      background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
+      margin: 0;
+      height: 100%;
+    }
 
-  .main-content {
-    position: relative;
-    z-index: 0;
-    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
-    padding: 20px;
-    overflow: hidden;
-    min-height: 100vh;
-  }
+    .main-content {
+      position: relative;
+      z-index: 0;
+      background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
+      padding: 20px;
+      overflow: hidden;
+      min-height: 100vh;
+    }
 
-  .main-content::before{
-    content: "";
-    position: absolute;
-    top: 1.5%;
-    left: 1.5%;
-    width: 97%;
-    height: 97%;
-    background: url('https://ryanahrari.com/Images/overlay-image.jpg') no-repeat center center;
-    background-position: center 20%;
-    background-size: cover;
-    opacity: 0.3;
-    z-index: -1;
-    pointer-events: none;
-  }
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 1.5%;
+      left: 1.5%;
+      width: 97%;
+      height: 97%;
+      background: url('https://ryanahrari.com/Images/overlay-image.jpg') no-repeat center center;
+      background-position: center 20%;
+      background-size: cover;
+      opacity: 0.3;
+      z-index: -1;
+      pointer-events: none;
+    }
 
-  .scrolled {
-    background: linear-gradient(to bottom, #9c9c9c, #494949);
-  }
+    .scrolled {
+      background: linear-gradient(to bottom, #9c9c9c, #494949);
+    }
 
-  /* Header/Blog Title */
-  .header {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    text-align: center;
-    color:#040404;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-  }
+    /* Header/Blog Title */
+    .header {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      text-align: center;
+      color: #040404;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
 
-  .header::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(35, 67, 146, 0.55);
-    z-index: -1;
-    pointer-events: none;
-  }
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(35, 67, 146, 0.55);
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .header h1 {
-    font-size: 50px;
-  }
+      font-size: 50px;
+    }
 
-  /* Style the top navigation bar */
-  .topnav {
-    width: 100%;
-    overflow: hidden;
-    background-color: #333;
-  }
+    /* Style the top navigation bar */
+    .topnav {
+      width: 100%;
+      overflow: hidden;
+      background-color: #333;
+    }
 
-  .a {
-    text-align: center;
-    color: inherit!important;
-    text-decoration: none!important;
-  }
+    .a {
+      text-align: center;
+      color: inherit !important;
+      text-decoration: none !important;
+    }
 
-  .a:visited {
-    color: inherit;
-  }
+    .a:visited {
+      color: inherit;
+    }
 
-  .a:hover {
-    color: #555!important;
-    text-decoration: underline!important;
-  }
+    .a:hover {
+      color: #555 !important;
+      text-decoration: underline !important;
+    }
 
-  .a:active {
-    color: #333;
-  }
+    .a:active {
+      color: #333;
+    }
 
-  /* Style the topnav links */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-  /* Change color on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
 
-  /* Left column */
-  .leftcolumn {   
-    flex: 3;
-    margin-right: 20px;
-  }
+    /* Left column */
+    .leftcolumn {
+      flex: 3;
+      margin-right: 20px;
+    }
 
-  .flexcol {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
+    .flexcol {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
 
-  .flexrow{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+    .flexrow {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-  .rightcolumn {
-    flex: 1;
-    margin-left: 20px;
-  }
+    .rightcolumn {
+      flex: 1;
+      margin-left: 20px;
+    }
 
-  .leftcolumn, .rightcolumn {
-    padding: 10px;
-  }
-  /* .headshot_image{
+    .leftcolumn,
+    .rightcolumn {
+      padding: 10px;
+    }
+
+    /* .headshot_image{
     border-radius: 50px;
   } */
-  /* Fake image */
-  .fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-  }
+    /* Fake image */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
 
     /* Flair image */
-  .flair {
-    background-color: #333;
-    border-radius: 25px;
-    width: 330px;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .flair {
+      background-color: #333;
+      border-radius: 25px;
+      width: 330px;
+      padding: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-   /* SystemVerilog image */
-   .SystemVerilog {
-    background-color: #9c9c9c;
-    width: 330px;
-    border-radius: 25px;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    /* SystemVerilog image */
+    .SystemVerilog {
+      background-color: #9c9c9c;
+      width: 330px;
+      border-radius: 25px;
+      padding: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  /* Add a card effect for articles */
-  .card {
-    background-color: rgba(35, 67, 146, 0.55);
-    padding: 20px;
-    margin-top: 20px;
-    flex-grow: 1;
-    /* text-align: center; */
-  }
+    /* Add a card effect for articles */
+    .card {
+      background-color: rgba(35, 67, 146, 0.55);
+      padding: 20px;
+      margin-top: 20px;
+      flex-grow: 1;
+      /* text-align: center; */
+    }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin: 0 20px;
-  }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: 0 20px;
+    }
 
-  /* Clear floats after the columns */
-  .row::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    /* Clear floats after the columns */
+    .row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-  /* Footer */
-  .footer {
-    position: relative;
-    padding: 20px;
-    text-align: center;
-    z-index: 1;
-    background: linear-gradient(to bottom, #767676, #494949);
-    /* transition: background 0.5s ease-in-out; */
-  }
+    /* Footer */
+    .footer {
+      position: relative;
+      padding: 20px;
+      text-align: center;
+      z-index: 1;
+      background: linear-gradient(to bottom, #767676, #494949);
+      /* transition: background 0.5s ease-in-out; */
+    }
 
-  .portfolio-item {
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .portfolio-item:hover {
+    .portfolio-item {
+      padding: 20px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .portfolio-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
     }
-  }
 
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 400px) {
-    .topnav a {
-      float: none;
-      width: 100%;
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+
+      .leftcolumn,
+      .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
     }
-  }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
   </style>
   <meta charset="UTF-8">
   <title>Ryan Ahrari | Ryan Ahrari</title>
   <meta name="description" content="Ryan Ahrari website, projects, and connections">
-  <meta name="keywords" content="Ryan Ahrari, Resume, Website, C, Python, Software Engineer, Machine Learning, ASIC Design">
+  <meta name="keywords"
+    content="Ryan Ahrari, Resume, Website, C, Python, Software Engineer, Machine Learning, ASIC Design">
   <meta name="author" content="Ryan Ahrari">
   <meta name="application-name" content="Ryan Ahrari's Website">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -238,9 +246,9 @@
     function debounce(func, wait) {
       let timeout;
       return function (...args) {
-          const context = this;
-          clearTimeout(timeout);
-          timeout = setTimeout(() => func.apply(context, args), wait);
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
       };
     }
 
@@ -249,7 +257,7 @@
     let ticking = false;
 
     const updateGradient = () => {
-      
+
       const scrollTop = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
       const scrollPercentage = Math.min(scrollTop / scrollHeight, 1);
@@ -260,7 +268,7 @@
         Math.round(start + (endColor[i] - start) * scrollPercentage)
       );
 
-      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;   
+      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
 
       const mainContent = document.querySelector(".main-content");
       mainContent.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
@@ -269,33 +277,33 @@
       footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
 
       const isNowScrollingDown = scrollTop > lastScrollY;
-      if(isNowScrollingDown !== isNowScrollingDown){
+      if (isNowScrollingDown !== isNowScrollingDown) {
         isScrollingDown = isNowScrollingDown;
       }
 
-      if(!ticking){
-        window.requestAnimationFrame(() =>{
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
           const header = document.querySelector('.header');
           const fadeSpeed = 2;
-          
+
           let opacity; // Decrease opacity as you scroll
-          
-          if(isScrollingDown){
+
+          if (isScrollingDown) {
             opacity = 1 - (scrollPercentage * fadeSpeed);
-          }else{
-            opacity = Math.min(1, 1- scrollPercentage * 2.5 + 0.1);
+          } else {
+            opacity = Math.min(1, 1 - scrollPercentage * 2.5 + 0.1);
           }
 
           header.style.opacity = opacity;
-          header.style.transition = isNowScrollingDown 
-            ?'opacity 0.15s ease-out'
-            :'opacity 0.05s ease-out';
+          header.style.transition = isNowScrollingDown
+            ? 'opacity 0.15s ease-out'
+            : 'opacity 0.05s ease-out';
 
           lastScrollY = scrollTop;
 
           ticking = false;
-      });
-        
+        });
+
         ticking = true;
       }
     };
@@ -303,6 +311,7 @@
     window.addEventListener('scroll', debounce(updateGradient, 50));
   </script>
 </head>
+
 <body>
 
   <div class="topnav">
@@ -311,7 +320,7 @@
     <a href="#">Link</a> -->
     <a href="/contact.html" style="float:right">Contact Info</a>
   </div>
-  
+
   <div class="header">
     <h1>Ryan Ahrari</h1>
   </div>
@@ -320,38 +329,53 @@
     <div class="row">
       <div class="leftcolumn">
         <div class="card">
-              <h2>PROJECTS</h2>
-              <!-- <h5>Title description, Dec 7, 2017</h5>
+          <h2>PROJECTS</h2>
+          <!-- <h5>Title description, Dec 7, 2017</h5>
               <div class="fakeimg" style="height:200px;">Image</div>
               <p>Some text..</p>
               <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
-            <section id="portfolio">
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <div class="portfolio-item">
-                    <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
-                    <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
-                    <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
-                      The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
-                      investment that will be needed.</p>
-                    </div>
-                  <div class="portfolio-item">
-                    <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
-                    <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
-                    <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
-                        to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
-                    </p>
-                  </div>
-                  <div class="portfolio-item">
-                    <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
-                    <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
-                    <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
-                      For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
-                      The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
-                      </p>
-                  </div>
+          <section id="portfolio">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="portfolio-item">
+                <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability
+                    Analysis</a></h3>
+                <div class="flair" style="height:200px;"><a href="/references.html"><img
+                      src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a>
+                </div>
+                <p>This paper analyzes a colletion of research that overviews the topics of explainability and
+                  interpretability in artificial intelligence (AI).
+                  The discussion reveals a positive outlook for explainability and interpretability though it may be
+                  difficult to get the monetary
+                  investment that will be needed.</p>
               </div>
-            </section>
-            <!-- <div class="flexcol">
+              <div class="portfolio-item">
+                <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction
+                    Game Project</a></h3>
+                <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img
+                      src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128"
+                      style="padding: 20px;"></a></div>
+                <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles
+                  and SystemVerilog with accompanying verification tools. In order to allow the game
+                  to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other
+                  to allow for rounds of gameplay and an overall winner of the game.
+                </p>
+              </div>
+              <div class="portfolio-item">
+                <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability"
+                    target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
+                <div class="flair" style="height:320px;"><a href="/references.html"><img
+                      src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo"
+                      style="padding: 20px;"></a></div>
+                <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and
+                  implemented.
+                  For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
+                  The protocol designed worked to migrate the etcd pods when they were recognized as heading to
+                  instability using etcd's REST API.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- <div class="flexcol">
           <div class="flexrow">
             <div class="card">
               <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
@@ -377,20 +401,22 @@
                 The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
                 </p>
             </div> -->
-            <!-- <div class="card">
+          <!-- <div class="card">
               <pre>
   
               </pre>
             </div> -->
-          </div>
         </div>
+      </div>
       <div class="rightcolumn">
         <div class="card">
-        <!-- <div class="card" style="height:800px;"> -->
+          <!-- <div class="card" style="height:800px;"> -->
           <h2>About Me</h2>
-          <div class="headshot_image"><img src="/Images/Headshot_Image.jpg" alt="Photo of Me :)" style="width:100%; padding: 20px; border-radius: 50%;"></div>
-          <p>Hello and welcome to the website of Ryan Ahrari. I am a recent graduate from the University of California 
-            - Santa Cruz where I received my Master of Science in Computer Science and Engineering. I am actively seeking
+          <div class="headshot_image"><img src="/Images/Headshot_Image.jpg" alt="Photo of Me :)"
+              style="width:100%; padding: 20px; border-radius: 50%;"></div>
+          <p>Hello and welcome to the website of Ryan Ahrari. I am a recent graduate from the University of California
+            - Santa Cruz where I received my Master of Science in Computer Science and Engineering. I am actively
+            seeking
             a full time Software Engineering position and am currently based in the San Francisco Bay Area.</p>
         </div>
         <!-- <div class="card">
@@ -409,8 +435,10 @@
   </div>
 
   <div class="footer">
-    <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a class="a"  href="tel:408-816-9748">(408)816-9748</a></h3>
+    <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a class="a"
+        href="tel:408-816-9748">(408)816-9748</a></h3>
   </div>
 
 </body>
+
 </html>
