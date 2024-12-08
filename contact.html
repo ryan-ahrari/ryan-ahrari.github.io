@@ -338,13 +338,21 @@
           <h5>Connect with me and message on <a class="a"
               href="https://www.linkedin.com/in/ryan-ahrari/">LinkedIn</a></h5>
         </div>
-        <!-- <div class="card">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      </div> -->
+        <div class="card">
+          <h2>Direct Contact Form</h2>
+          <form action="http://localhost:3000/send" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+    
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+    
+            <button type="submit">Send Message</button>
+        </form>
+        </div>
       </div>
       <div class="rightcolumn">
         <!-- <div class="card">
