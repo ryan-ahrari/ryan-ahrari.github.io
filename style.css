@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #040404;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
+    margin: 0;
+    height: 100%;
+}
+
+.main-content {
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
+    padding: 20px;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 1.5%;
+    left: 1.5%;
+    width: 97%;
+    height: 97%;
+    background: url('https://ryanahrari.com/Images/overlay-image.jpg') no-repeat center center;
+    background-position: center 20%;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.scrolled {
+    background: linear-gradient(to bottom, #9c9c9c, #494949);
+}
+
+/* Header/Blog Title */
+.header {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+    color: #040404;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(35, 67, 146, 0.55);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.a {
+    text-align: center;
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.a:visited {
+    color: inherit;
+}
+
+.a:hover {
+    color: #555 !important;
+    text-decoration: underline !important;
+}
+
+.a:active {
+    color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Left column */
+.leftcolumn {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rightcolumn {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.leftcolumn,
+.rightcolumn {
+    padding: 10px;
+}
+
+/* .headshot_image{
+    border-radius: 50px;
+  } */
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Flair image */
+.flair {
+    background-color: #333;
+    border-radius: 25px;
+    width: 330px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* SystemVerilog image */
+.SystemVerilog {
+    background-color: #9c9c9c;
+    width: 330px;
+    border-radius: 25px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: rgba(35, 67, 146, 0.55);
+    padding: 20px;
+    margin-top: 20px;
+    flex-grow: 1;
+    /* text-align: center; */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 20px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+    background: linear-gradient(to bottom, #767676, #494949);
+    /* transition: background 0.5s ease-in-out; */
+}
+
+.portfolio-item {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-content::before {
+        background-size: contain;
+        /* Ensures the image fits without cropping */
+        background-position: center;
+        /* Keeps the image centered */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-content::before {
+        background-size: 100%;
+        /* Ensures the image covers less space on very small screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .portfolio-item img {
+        max-width: 90%;
+        /* Scale down logos to 90% of the container width */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 0 auto;
+        /* Center the image */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .portfolio-item img {
+        max-width: 70%;
+        /* Further scale down on very small screens */
+    }
+}
