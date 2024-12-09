@@ -3,7 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  
+
   <style>
     * {
       box-sizing: border-box;
@@ -234,6 +234,40 @@
         width: 100%;
       }
     }
+
+    @media screen and (max-width: 800px) {
+      .main-content::before {
+        background-size: contain;
+        /* Ensures the image fits without cropping */
+        background-position: center;
+        /* Keeps the image centered */
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .main-content::before {
+        background-size: 100%;
+        /* Ensures the image covers less space on very small screens */
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .portfolio-item img {
+        max-width: 90%;
+        /* Scale down logos to 90% of the container width */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 0 auto;
+        /* Center the image */
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .portfolio-item img {
+        max-width: 70%;
+        /* Further scale down on very small screens */
+      }
+    }
   </style>
   <meta charset="UTF-8">
   <title>Ryan Ahrari | Ryan Ahrari</title>
@@ -341,7 +375,7 @@
               <div class="portfolio-item">
                 <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability
                     Analysis</a></h3>
-                <div class="flair" style="height:200px;"><a href="/references.html"><img
+                <div class="flair" style="height:200px;"><a href="/Documents/Flair Project.pdf"><img
                       src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a>
                 </div>
                 <p>This paper analyzes a colletion of research that overviews the topics of explainability and
@@ -353,9 +387,9 @@
               <div class="portfolio-item">
                 <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction
                     Game Project</a></h3>
-                <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img
-                      src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128"
-                      style="padding: 20px;"></a></div>
+                <div class="SystemVerilog" style="height:180px;"><a
+                    href="https://git.ucsc.edu/rahrari/cse-225-final-project"><img src="/Images/SystemVerilog_logo.png"
+                      alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
                 <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles
                   and SystemVerilog with accompanying verification tools. In order to allow the game
                   to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other
@@ -365,7 +399,8 @@
               <div class="portfolio-item">
                 <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability"
                     target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
-                <div class="flair" style="height:320px;"><a href="/references.html"><img
+                <div class="flair" style="height:320px;"><a
+                    href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability"><img
                       src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo"
                       style="padding: 20px;"></a></div>
                 <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and
@@ -442,6 +477,8 @@
     <p>
       <a class="a" href="/privacy">Privacy Policy</a>
     </p>
+
+    <a class="a" href="/references">Citations</a>
   </div>
 
 </body>

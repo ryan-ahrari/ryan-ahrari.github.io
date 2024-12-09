@@ -3,7 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  
+
   <style>
     * {
       box-sizing: border-box;
@@ -143,8 +143,8 @@
     }
 
     /* .headshot_image{
-      border-radius: 50px;
-    } */
+    border-radius: 50px;
+  } */
     /* Fake image */
     .fakeimg {
       background-color: #aaa;
@@ -234,6 +234,41 @@
         width: 100%;
       }
     }
+
+    @media screen and (max-width: 800px) {
+      .main-content::before {
+        background-size: contain;
+        /* Ensures the image fits without cropping */
+        background-position: center;
+        /* Keeps the image centered */
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .main-content::before {
+        background-size: 100%;
+        /* Ensures the image covers less space on very small screens */
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .portfolio-item img {
+        max-width: 90%;
+        /* Scale down logos to 90% of the container width */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 0 auto;
+        /* Center the image */
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .portfolio-item img {
+        max-width: 70%;
+        /* Further scale down on very small screens */
+      }
+    }
+  </style>
   </style>
   <meta charset="UTF-8">
   <title>Ryan Ahrari | Ryan Ahrari</title>
@@ -335,21 +370,21 @@
           <h5>Email me at either <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a>
             or <a class="a" href="mailto:rahrari@ucsc.edu">rahrari@ucsc.edu</a></h5>
           <h5>Text or call me at <a class="a" href="tel:408-816-9748">(408)816-9748</a></h5>
-          <h5>Connect with me and message on <a class="a"
-              href="https://www.linkedin.com/in/ryan-ahrari/">LinkedIn</a></h5>
+          <h5>Connect with me and message on <a class="a" href="https://www.linkedin.com/in/ryan-ahrari/">LinkedIn</a>
+          </h5>
         </div>
         <div class="card">
           <h2>Direct Contact Form</h2>
           <form id="contactForm">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
-        
+
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
-        
+
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" rows="5" required></textarea><br><br>
-        
+
             <button type="submit">Send Message</button>
           </form>
           <div id="responseMessage" style="margin-top: 10px; color: green;"></div>
@@ -378,11 +413,16 @@
   </div>
 
   <div class="footer">
-    <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a
-        class="a" href="tel:408-816-9748">(408)816-9748</a></h3>
+    <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a class="a"
+        href="tel:408-816-9748">(408)816-9748</a></h3>
+    <p>
+      <a class="a" href="/privacy">Privacy Policy</a>
+
+      <a class="a" href="/references">Citations</a>
+    </p>
   </div>
 
-  <script>    
+  <script>
     document.getElementById('contactForm').addEventListener('submit', async function (event) {
       event.preventDefault(); // Prevent form from refreshing the page
 
@@ -393,7 +433,7 @@
         const response = await fetch('https://backend-ryan-ahrari.onrender.com/send', {
           method: 'POST',
           headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             name: formData.get('name'),
