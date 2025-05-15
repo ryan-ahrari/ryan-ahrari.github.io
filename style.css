@@ -135,6 +135,30 @@ body {
     padding: 10px;
 }
 
+/*
+CSS for about me section
+*/
+/* Modern, scannable layout */
+.intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.about-details {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: #646cff;
+    color: white;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
 /* .headshot_image{
     border-radius: 50px;
   } */
