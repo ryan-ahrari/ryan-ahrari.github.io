@@ -272,12 +272,33 @@
   </style> -->
   <meta charset="UTF-8">
   <title>Ryan Ahrari | Ryan Ahrari</title>
-  <meta name="description" content="Ryan Ahrari website, projects, and connections">
+  <meta name="description"
+    content="Ryan Ahrari - Software Developer specializing in Python and C. Check out my projects and contact me for collaborations.">
   <meta name="keywords"
-    content="Ryan Ahrari, Resume, Website, C, Python, Software Engineer, Machine Learning, ASIC Design">
+    content="Ryan Ahrari, software developer, portfolio, C, Python, Software Engineer, Machine Learning, ASIC Design">
   <meta name="author" content="Ryan Ahrari">
   <meta name="application-name" content="Ryan Ahrari's Website">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Social media previews -->
+  <meta property="og:title" content="Ryan Ahrari | Software Developer">
+  <meta property="og:description" content="Portfolio showcasing my software development projects.">
+  <meta property="og:image" content="https://yourdomain.com/Images/Headshot_Image.jpg">
+  <meta property="og:url" content="https://ryanahrari.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ryan Ahrari",
+      "jobTitle": "Software Developer",
+      "url": "https://ryanahrari.com",
+      "sameAs": [
+        "https://github.com/ryan-ahrari",
+        "https://linkedin.com/in/ryanahrari"
+      ]
+    }
+    defer
+  </script>
 
   <script>
     function debounce(func, wait) {
@@ -346,7 +367,7 @@
     };
 
     window.addEventListener('scroll', debounce(updateGradient, 50));
-  defer
+    defer
   </script>
 </head>
 
@@ -359,11 +380,11 @@
     <a href="/contact" style="float:right">Contact Info</a>
   </div>
 
-  <div class="header">
+  <header>
     <h1>Ryan Ahrari</h1>
-  </div>
+  </header>
 
-  <div class="main-content">
+  <main>
     <div class="row">
       <div class="leftcolumn">
         <div class="card">
@@ -453,18 +474,18 @@
           <h2>About Me</h2>
           <div class="headshot_image"><img src="/Images/Headshot_Image.jpg" alt="Photo of Me"
               style="width:100%; padding: 20px; border-radius: 50%;"></div>
-              <p class="intro">
-                Hey! I'm Ryan, a <strong>Software Developer</strong> with a passion for 
-                building intuitive, performant applications. I specialize in 
-                <strong>Python</strong>, <strong>C</strong>, and <strong>system design</strong>.
-              </p>
-              <div class="about-details">
-                <p>
-                  Previously, I’ve worked on the Resillient Kubernetes Cluster Availability project with DELL. 
-                  When I’m not coding, I love to read and play basketball.
-                </p>
-                <a href="Documents/Resume.pdf" class="btn" download>Download Resume</a>
-              </div>
+          <p class="intro">
+            Hey! I'm Ryan, a <strong>Software Developer</strong> with a passion for
+            building intuitive, performant applications. I specialize in
+            <strong>Python</strong>, <strong>C</strong>, and <strong>system design</strong>.
+          </p>
+          <div class="about-details">
+            <p>
+              Previously, I’ve worked on the Resillient Kubernetes Cluster Availability project with DELL.
+              When I’m not coding, I love to read and play basketball.
+            </p>
+            <a href="Documents/Resume.pdf" class="btn" download>Download Resume</a>
+          </div>
         </div>
         <!-- <div class="card">
           <h3>Popular Post</h3>
@@ -479,9 +500,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <div class="footer">
+  <footer>
     <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a class="a"
         href="tel:408-816-9748">(408)816-9748</a></h3>
     <p>
@@ -490,7 +511,7 @@
       &emsp;
       <a class="a" href="/references">Citations</a>
     </p>
-  </div>
+  </footer>
 
 </body>
 

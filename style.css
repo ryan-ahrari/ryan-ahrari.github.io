@@ -10,7 +10,7 @@ body {
     height: 100%;
 }
 
-.main-content {
+.main {
     position: relative;
     z-index: 0;
     background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
@@ -19,7 +19,7 @@ body {
     min-height: 100vh;
 }
 
-.main-content::before {
+.main::before {
     content: "";
     position: absolute;
     top: 1.5%;
@@ -157,6 +157,7 @@ CSS for about me section
     color: white;
     border-radius: 4px;
     margin-top: 1rem;
+    text-decoration: none;
 }
 
 /* .headshot_image{
