@@ -1,515 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <!-- <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      color: #040404;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
-      margin: 0;
-      height: 100%;
-    }
-
-    .main-content {
-      position: relative;
-      z-index: 0;
-      background: linear-gradient(to bottom, #9c9c9c 0%, #767676 50%, #464646 100%);
-      padding: 20px;
-      overflow: hidden;
-      min-height: 100vh;
-    }
-
-    .main-content::before {
-      content: "";
-      position: absolute;
-      top: 1.5%;
-      left: 1.5%;
-      width: 97%;
-      height: 97%;
-      background: url('https://ryanahrari.com/Images/overlay-image.jpg') no-repeat center center;
-      background-position: center 20%;
-      background-size: cover;
-      opacity: 0.3;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .scrolled {
-      background: linear-gradient(to bottom, #9c9c9c, #494949);
-    }
-
-    /* Header/Blog Title */
-    .header {
-      position: relative;
-      z-index: 1;
-      padding: 20px;
-      text-align: center;
-      color: #040404;
-      opacity: 1;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(35, 67, 146, 0.55);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .header h1 {
-      font-size: 50px;
-    }
-
-    /* Style the top navigation bar */
-    .topnav {
-      width: 100%;
-      overflow: hidden;
-      background-color: #333;
-    }
-
-    .a {
-      text-align: center;
-      color: inherit !important;
-      text-decoration: none !important;
-    }
-
-    .a:visited {
-      color: inherit;
-    }
-
-    .a:hover {
-      color: #555 !important;
-      text-decoration: underline !important;
-    }
-
-    .a:active {
-      color: #333;
-    }
-
-    /* Style the topnav links */
-    .topnav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    /* Change color on hover */
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    /* Left column */
-    .leftcolumn {
-      flex: 3;
-      margin-right: 20px;
-    }
-
-    .flexcol {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-
-    .flexrow {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
-    .rightcolumn {
-      flex: 1;
-      margin-left: 20px;
-    }
-
-    .leftcolumn,
-    .rightcolumn {
-      padding: 10px;
-    }
-
-    /* .headshot_image{
-    border-radius: 50px;
-  } */
-    /* Fake image */
-    .fakeimg {
-      background-color: #aaa;
-      width: 100%;
-      padding: 20px;
-    }
-
-    /* Flair image */
-    .flair {
-      background-color: #333;
-      border-radius: 25px;
-      width: 330px;
-      padding: 20px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* SystemVerilog image */
-    .SystemVerilog {
-      background-color: #9c9c9c;
-      width: 330px;
-      border-radius: 25px;
-      padding: 20px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Add a card effect for articles */
-    .card {
-      background-color: rgba(35, 67, 146, 0.55);
-      padding: 20px;
-      margin-top: 20px;
-      flex-grow: 1;
-      /* text-align: center; */
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin: 0 20px;
-    }
-
-    /* Clear floats after the columns */
-    .row::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* Footer */
-    .footer {
-      position: relative;
-      padding: 20px;
-      text-align: center;
-      z-index: 1;
-      background: linear-gradient(to bottom, #767676, #494949);
-      /* transition: background 0.5s ease-in-out; */
-    }
-
-    .portfolio-item {
-      padding: 20px;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 800px) {
-
-      .leftcolumn,
-      .rightcolumn {
-        width: 100%;
-        padding: 0;
-      }
-    }
-
-    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-    @media screen and (max-width: 400px) {
-      .topnav a {
-        float: none;
-        width: 100%;
-      }
-    }
-
-    @media screen and (max-width: 800px) {
-      .main-content::before {
-        background-size: contain;
-        /* Ensures the image fits without cropping */
-        background-position: center;
-        /* Keeps the image centered */
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-      .main-content::before {
-        background-size: 100%;
-        /* Ensures the image covers less space on very small screens */
-      }
-    }
-
-    @media screen and (max-width: 800px) {
-      .portfolio-item img {
-        max-width: 90%;
-        /* Scale down logos to 90% of the container width */
-        height: auto;
-        /* Maintain aspect ratio */
-        margin: 0 auto;
-        /* Center the image */
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-      .portfolio-item img {
-        max-width: 70%;
-        /* Further scale down on very small screens */
-      }
-    }
-  </style> -->
   <meta charset="UTF-8">
-  <title>Ryan Ahrari | Ryan Ahrari</title>
-  <meta name="description"
-    content="Ryan Ahrari - Software Developer specializing in Python and C. Check out my projects and contact me for collaborations.">
-  <meta name="keywords"
-    content="Ryan Ahrari, software developer, portfolio, C, Python, Software Engineer, Machine Learning, ASIC Design">
-  <meta name="author" content="Ryan Ahrari">
-  <meta name="application-name" content="Ryan Ahrari's Website">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Social media previews -->
-  <meta property="og:title" content="Ryan Ahrari | Software Developer">
-  <meta property="og:description" content="Portfolio showcasing my software development projects.">
-  <meta property="og:image" content="https://yourdomain.com/Images/Headshot_Image.jpg">
+  <title>Ryan Ahrari | Software Engineer</title>
+  <meta name="description" content="Ryan Ahrari - Software Engineer specializing in Python, C, and systems design. M.S. Computer Science & Engineering, UC Santa Cruz.">
+  <meta name="keywords" content="Ryan Ahrari, software engineer, portfolio, C, Python, Machine Learning, ASIC Design, Kubernetes">
+  <meta name="author" content="Ryan Ahrari">
+  <meta name="application-name" content="Ryan Ahrari">
+  <meta property="og:title" content="Ryan Ahrari | Software Engineer">
+  <meta property="og:description" content="Portfolio showcasing software engineering projects in ML, hardware design, and distributed systems.">
+  <meta property="og:image" content="https://ryanahrari.com/Images/Headshot_Image.jpg">
   <meta property="og:url" content="https://ryanahrari.com">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Ryan Ahrari",
-    "jobTitle": "Frontend Developer",
-    "url": "https://yourdomain.com",
+    "jobTitle": "Software Engineer",
+    "url": "https://ryanahrari.com",
     "sameAs": [
       "https://github.com/ryan-ahrari",
-      "https://linkedin.com/in/yourprofile"
+      "https://www.linkedin.com/in/ryan-ahrari/"
     ]
   }
-  defer
-</script>
-  <script>
-    function debounce(func, wait) {
-      let timeout;
-      return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-      };
-    }
-
-    let lastScrollY = 0; // Keep track of last scoll position to prevent flashing
-    let isScrollingDown = true;
-    let ticking = false;
-
-    const updateGradient = () => {
-
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercentage = Math.min(scrollTop / scrollHeight, 1);
-
-      const startColor = [156, 156, 156]; // RGB for #9c9c9c
-      const endColor = [73, 73, 73]; // RGB for #494949
-      const interpolatedColor = startColor.map((start, i) =>
-        Math.round(start + (endColor[i] - start) * scrollPercentage)
-      );
-
-      const interpolatedHex = `rgb(${interpolatedColor.join(",")})`;
-
-      const mainContent = document.querySelector(".main-content");
-      mainContent.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
-
-      const footer = document.querySelector(".footer");
-      footer.style.background = `linear-gradient(to bottom, ${interpolatedHex}, #494949)`;
-
-      const isNowScrollingDown = scrollTop > lastScrollY;
-      if (isNowScrollingDown !== isNowScrollingDown) {
-        isScrollingDown = isNowScrollingDown;
-      }
-
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const header = document.querySelector('.header');
-          const fadeSpeed = 2;
-
-          let opacity; // Decrease opacity as you scroll
-
-          if (isScrollingDown) {
-            opacity = 1 - (scrollPercentage * fadeSpeed);
-          } else {
-            opacity = Math.min(1, 1 - scrollPercentage * 2.5 + 0.1);
-          }
-
-          header.style.opacity = opacity;
-          header.style.transition = isNowScrollingDown
-            ? 'opacity 0.15s ease-out'
-            : 'opacity 0.05s ease-out';
-
-          lastScrollY = scrollTop;
-
-          ticking = false;
-        });
-
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', debounce(updateGradient, 50));
-    defer
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="topnav">
-    <a href="/index">Home</a>
-    <!-- <a href="#">Link</a>
-    <a href="#">Link</a> -->
-    <a href="/contact" style="float:right">Contact Info</a>
-  </div>
+  <nav class="topnav">
+    <a href="/index" class="nav-logo">Ryan Ahrari</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
 
-  <div class="header">
+  <section class="hero">
+    <p class="hero-eyebrow">Hi, I'm</p>
     <h1>Ryan Ahrari</h1>
-  </div>
+    <p class="hero-title">Software Engineer</p>
+    <p class="hero-sub">M.S. Computer Science &amp; Engineering &nbsp;·&nbsp; UC Santa Cruz</p>
+    <p class="hero-bio">Building performant systems at the intersection of machine learning, hardware design, and distributed infrastructure.</p>
+    <div class="hero-ctas">
+      <a href="Documents/Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+      <a href="/contact" class="btn btn-secondary">Get in Touch</a>
+    </div>
+    <div class="hero-links">
+      <a href="https://github.com/ryan-ahrari" class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/ryan-ahrari/" class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </div>
+  </section>
 
-  <div class="main-content">
-    <div class="row">
-      <div class="leftcolumn">
-        <div class="card">
-          <h2>PROJECTS</h2>
-          <!-- <h5>Title description, Dec 7, 2017</h5>
-              <div class="fakeimg" style="height:200px;">Image</div>
-              <p>Some text..</p>
-              <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> -->
-          <section id="portfolio">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div class="portfolio-item">
-                <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability
-                    Analysis</a></h3>
-                <div class="flair" style="height:200px;"><a href="/Documents/Flair Project.pdf"><img
-                      src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a>
-                </div>
-                <p>This paper analyzes a colletion of research that overviews the topics of explainability and
-                  interpretability in artificial intelligence (AI).
-                  The discussion reveals a positive outlook for explainability and interpretability though it may be
-                  difficult to get the monetary
-                  investment that will be needed.</p>
-              </div>
-              <div class="portfolio-item">
-                <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction
-                    Game Project</a></h3>
-                <div class="SystemVerilog" style="height:180px;"><a
-                    href="https://git.ucsc.edu/rahrari/cse-225-final-project"><img src="/Images/SystemVerilog_logo.png"
-                      alt="System Verilog" width="290" height="128" style="padding: 20px;"></a></div>
-                <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles
-                  and SystemVerilog with accompanying verification tools. In order to allow the game
-                  to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other
-                  to allow for rounds of gameplay and an overall winner of the game.
-                </p>
-              </div>
-              <div class="portfolio-item">
-                <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability"
-                    target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
-                <div class="flair" style="height:320px;"><a
-                    href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability"><img
-                      src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo"
-                      style="padding: 20px;"></a></div>
-                <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and
-                  implemented.
-                  For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
-                  The protocol designed worked to migrate the etcd pods when they were recognized as heading to
-                  instability using etcd's REST API.
-                </p>
-              </div>
-            </div>
-          </section>
-          <!-- <div class="flexcol">
-          <div class="flexrow">
-            <div class="card">
-              <h3><a class="a" href="/Documents/Flair Project.pdf" target="_blank">Interpretability and Explainability Analysis</a></h3>
-              <div class="flair" style="height:200px;"><a href="/references.html"><img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo" style="padding: 20px;"></a></div>
-              <p>This paper analyzes a colletion of research that overviews the topics of explainability and interpretability in artificial intelligence (AI). 
-                The discussion reveals a positive outlook for explainability and interpretability though it may be difficult to get the monetary 
-                investment that will be needed.</p>
-            </div>
-            <div class="card">
-              <h3><a class="a" href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank">ASIC Reaction Game Project</a></h3>
-              <div class="SystemVerilog" style="height:180px;"><a href="/references.html"><img src="/Images/SystemVerilog_logo.png" alt="Flair Logo" width="290" height="128" style="padding: 20px;"></a></div>
-              <p> For this project an FPGA reaction based game was designed and simulated using ASIC design principles and SystemVerilog with accompanying verification tools. In order to allow the game
-                to work as intended, there were 3 finite-state machines (FSMs) designed that interact with each other to allow for rounds of gameplay and an overall winner of the game. 
-                </p>
-            </div>
-          </div>
-          <div class="flexrow">
-            <div class="card">
-              <h3><a class="a" href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank">Resilient Kubernetes Cluster Availability with DELL</a></h3>
-              <div class="flair" style="height:320px;"><a href="/references.html"><img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo" style="padding: 20px;"></a></div>
-              <p> In this project a protocol for providing resilience to Kuberenetes Clusters was designed and implemented.
-                For Kubernetes clusters to work, they store the crucial cluster meta-information in an etcd pod.
-                The protocol designed worked to migrate the etcd pods when they were recognized as heading to instability using etcd's REST API.
-                </p>
-            </div> -->
-          <!-- <div class="card">
-              <pre>
-  
-              </pre>
-            </div> -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="/Images/Headshot_Image.jpg" alt="Ryan Ahrari" class="headshot">
         </div>
-      </div>
-      <div class="rightcolumn">
-        <div class="card">
-          <!-- <div class="card" style="height:800px;"> -->
-          <h2>About Me</h2>
-          <div class="headshot_image"><img src="/Images/Headshot_Image.jpg" alt="Photo of Me"
-              style="width:100%; padding: 20px; border-radius: 50%;"></div>
-          <p class="intro">
-            Hey! I'm Ryan, a <strong>Software Developer</strong> with a passion for
-            building intuitive, performant applications. I specialize in
-            <strong>Python</strong>, <strong>C</strong>, and <strong>system design</strong>.
+        <div class="about-text">
+          <p>
+            I'm a software engineer with a passion for building intuitive, performant applications.
+            I specialize in <strong>Python</strong>, <strong>C</strong>, and <strong>system design</strong>,
+            with experience spanning machine learning research, ASIC digital design, and distributed cloud infrastructure.
           </p>
-          <div class="about-details">
-            <p>
-              Previously, I’ve worked on the Resillient Kubernetes Cluster Availability project with DELL.
-              When I’m not coding, I love to read and play basketball.
-            </p>
-            <a href="Documents/Resume.pdf" class="btn" download>Download Resume</a>
+          <p>
+            Previously, I worked on the Resilient Kubernetes Cluster Availability project in partnership with DELL.
+            When I'm not coding, I love to read and play basketball.
+          </p>
+          <div class="education">
+            <h3>Education</h3>
+            <div class="edu-item">
+              <span class="edu-degree">M.S. Computer Science &amp; Engineering</span>
+              <span class="edu-school">University of California, Santa Cruz</span>
+            </div>
           </div>
-        </div>
-        <!-- <div class="card">
-          <h3>Popular Post</h3>
-          <div class="fakeimg"><p>Image</p></div>
-          <div class="fakeimg"><p>Image</p></div>
-          <div class="fakeimg"><p>Image</p></div>
-        </div> -->
-        <div class="card">
-          <h3>Follow Me</h3>
-          <p><a class="a" href="https://www.linkedin.com/in/ryan-ahrari/">On LinkedIn</a></p>
-          <p><a class="a" href="https://github.com/ryan-ahrari">On GitHub</a></p>
+          <a href="Documents/Resume.pdf" class="btn btn-primary" download style="margin-top: 1.75rem;">Download Resume</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="footer">
-    <h3>Email: <a class="a" href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a> &emsp; Phone: <a class="a"
-        href="tel:408-816-9748">(408)816-9748</a></h3>
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Technologies</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">SystemVerilog</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">ASIC Design</span>
+        <span class="skill-tag">FPGA</span>
+        <span class="skill-tag">etcd</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Linux</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-logo">
+            <img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo">
+          </div>
+          <h3><a href="/Documents/Flair Project.pdf" target="_blank" rel="noopener noreferrer">Interpretability &amp; Explainability Analysis</a></h3>
+          <p>Analysis of a collection of research covering explainability and interpretability in AI. Examines the positive outlook for these techniques alongside the challenges around monetary investment and adoption.</p>
+          <a href="/Documents/Flair Project.pdf" class="project-link" target="_blank" rel="noopener noreferrer">View Paper &rarr;</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-logo">
+            <img src="/Images/SystemVerilog_logo.png" alt="SystemVerilog Logo">
+          </div>
+          <h3><a href="https://git.ucsc.edu/rahrari/cse-225-final-project" target="_blank" rel="noopener noreferrer">ASIC Reaction Game</a></h3>
+          <p>FPGA reaction game designed and simulated using ASIC design principles and SystemVerilog with verification tools. Features three interacting finite-state machines driving rounds of gameplay and an overall winner.</p>
+          <a href="https://git.ucsc.edu/rahrari/cse-225-final-project" class="project-link" target="_blank" rel="noopener noreferrer">View on GitLab &rarr;</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-logo">
+            <img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo">
+          </div>
+          <h3><a href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" target="_blank" rel="noopener noreferrer">Resilient Kubernetes Cluster Availability</a></h3>
+          <p>Protocol for providing resilience to Kubernetes clusters in partnership with DELL. Detects and migrates at-risk etcd pods before instability using etcd's REST API to preserve cluster metadata.</p>
+          <a href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
     <p>
-      <a class="a" href="/privacy">Privacy Policy</a>
-
-      &emsp;
-      <a class="a" href="/references">Citations</a>
+      <a href="mailto:ryan.ahrari@gmail.com">ryan.ahrari@gmail.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="tel:408-816-9748">(408) 816-9748</a>
     </p>
-  </div>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/references">Citations</a>
+    </div>
+  </footer>
 
 </body>
 
