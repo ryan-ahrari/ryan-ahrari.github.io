@@ -33,16 +33,21 @@
 
 <body>
 
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <nav class="topnav">
     <a href="/index" class="nav-logo">Ryan Ahrari</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="/contact">Contact</a>
     </div>
   </nav>
 
   <section class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <p class="hero-eyebrow">Hi, I'm</p>
     <h1>Ryan Ahrari</h1>
     <p class="hero-title"><span id="typed-role"></span><span class="cursor" aria-hidden="true"></span></p>
@@ -96,7 +101,46 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="skills">
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title" data-animate>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-entry" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Feb 2024 &ndash; Present</p>
+            <h3>AI Trainer</h3>
+            <span class="timeline-company">DataAnnotation &middot; Remote</span>
+            <p>Design and evaluate coding problems across Python, JavaScript, React, and C++, providing structured feedback to train large language models on software engineering tasks. Review AI-generated code for correctness, performance, and clarity using OpenAI and Claude.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Jun 2022 &ndash; Sep 2023</p>
+            <h3>Software Associate</h3>
+            <span class="timeline-company">Infosys Limited &middot; Remote</span>
+            <p>Designed high-performance SQL queries and PL/SQL procedures for Oracle E-Business Suite. Resolved critical database integrity issues and automated manual validation workflows, ensuring SLA compliance across enterprise-scale applications using Agile methodologies.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Oct 2019 &ndash; Jun 2022</p>
+            <h3>Computer Science Tutor</h3>
+            <span class="timeline-company">Baskin School of Engineering, UC Santa Cruz</span>
+            <p>Tutored 100+ undergraduate students in data structures, algorithms, systems programming, and computer architecture &mdash; improving exam pass rates by 20%. Delivered lectures on logic design, FPGA prototyping, and hardware description languages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
     <div class="container">
       <h2 class="section-title" data-animate>Technologies</h2>
       <div class="skills-grid">
@@ -115,7 +159,7 @@
     </div>
   </section>
 
-  <section class="section" id="projects">
+  <section class="section section-alt" id="projects">
     <div class="container">
       <h2 class="section-title" data-animate>Projects</h2>
       <div class="projects-grid" data-stagger-container>

@@ -13,6 +13,9 @@
 
 <body>
 
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
   <nav class="topnav">
     <a href="/index" class="nav-logo">Ryan Ahrari</a>
     <div class="nav-links">
@@ -84,6 +87,7 @@
     </div>
   </footer>
 
+  <script src="/script.js" defer></script>
   <script>
     document.getElementById('contactForm').addEventListener('submit', async function(event) {
       event.preventDefault();
