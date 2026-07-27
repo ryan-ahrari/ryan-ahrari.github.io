@@ -10,6 +10,8 @@ function debounce(fn, ms) {
     };
 }
 
+const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
 // =============================================================================
 // CUSTOM CURSOR
 // =============================================================================
@@ -114,10 +116,10 @@ if (typedEl) {
 }
 
 // =============================================================================
-// PARTICLE CANVAS (HERO)
+// PARTICLE CANVAS (HERO) — desktop only
 // =============================================================================
 
-const heroCanvas = document.getElementById('hero-canvas');
+const heroCanvas = !isTouchDevice ? document.getElementById('hero-canvas') : null;
 
 if (heroCanvas) {
     const ctx         = heroCanvas.getContext('2d');
@@ -235,10 +237,10 @@ if (heroCanvas) {
 }
 
 // =============================================================================
-// PARALLAX (HERO)
+// PARALLAX (HERO) — desktop only
 // =============================================================================
 
-const parallaxItems = [
+const parallaxItems = isTouchDevice ? [] : [
     { el: document.querySelector('.hero-eyebrow'), rate: 0.12 },
     { el: document.querySelector('.hero h1'),      rate: 0.22 },
     { el: document.querySelector('.hero-title'),   rate: 0.30 },
@@ -247,6 +249,7 @@ const parallaxItems = [
     { el: document.querySelector('.hero-ctas'),    rate: 0.48 },
     { el: document.querySelector('.hero-links'),   rate: 0.54 },
 ].filter(item => item.el !== null);
+
 
 let parallaxTicking = false;
 

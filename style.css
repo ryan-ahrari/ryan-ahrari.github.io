@@ -794,16 +794,20 @@ body {
    RESPONSIVE
    ============================================================================= */
 @media (max-width: 768px) {
+    .section {
+        padding: 7rem 1.25rem;
+    }
+
+    .section-title {
+        margin-bottom: 3.5rem;
+    }
+
     .topnav {
         padding: 0 1.25rem;
     }
 
     .nav-links {
         gap: 1.25rem;
-    }
-
-    .section {
-        padding: 7rem 1.25rem;
     }
 
     .hero {
@@ -813,7 +817,7 @@ body {
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap:                   4rem;
+        gap:                   3rem;
     }
 
     .headshot {
@@ -822,19 +826,56 @@ body {
     }
 
     .timeline-entry {
-        padding-bottom: 7rem;
+        padding-bottom: 5rem;
     }
 
     .project-card {
         padding: 2rem;
     }
+
+    .project-logo {
+        height: 160px;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+        margin-bottom: 3rem;
+    }
+
+    .footer {
+        padding: 2.5rem 1.25rem;
+    }
+}
+
+/* Nav wraps to two lines on very small screens */
+@media (max-width: 540px) {
+    .topnav {
+        flex-wrap: wrap;
+        height:    auto;
+        padding:   0.875rem 1.25rem;
+        gap:       0.4rem;
+    }
+
+    .nav-links {
+        width:            100%;
+        gap:              1.25rem;
+        padding-bottom:   0.25rem;
+        justify-content:  flex-start;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .nav-links {
-        gap: 1rem;
-    }
-
     .hero-ctas {
         flex-direction: column;
         align-items:    center;
