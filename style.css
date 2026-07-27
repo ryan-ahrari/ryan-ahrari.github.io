@@ -295,8 +295,15 @@ body {
     border-radius: 9999px;
     font-size: 0.85rem;
     color: var(--text-muted);
-    transition: all 0.2s;
     cursor: default;
+    opacity: 0;
+    transform: scale(0.88) translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.skill-tag.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
 }
 
 .skill-tag:hover {
@@ -555,6 +562,36 @@ body {
     gap: 1.5rem;
     justify-content: center;
     margin-top: 0.75rem;
+}
+
+/* === Scroll Animations === */
+[data-animate],
+[data-stagger] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate].visible,
+[data-stagger].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Typewriter cursor === */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.85em;
+    background: var(--accent);
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* === Responsive === */

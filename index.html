@@ -45,7 +45,7 @@
   <section class="hero">
     <p class="hero-eyebrow">Hi, I'm</p>
     <h1>Ryan Ahrari</h1>
-    <p class="hero-title">Software Engineer</p>
+    <p class="hero-title"><span id="typed-role"></span><span class="cursor" aria-hidden="true"></span></p>
     <p class="hero-sub">M.S. Computer Science &amp; Engineering &nbsp;·&nbsp; UC Santa Cruz</p>
     <p class="hero-bio">Building performant systems at the intersection of machine learning, hardware design, and distributed infrastructure.</p>
     <div class="hero-ctas">
@@ -68,8 +68,8 @@
 
   <section class="section" id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-grid">
+      <h2 class="section-title" data-animate>About Me</h2>
+      <div class="about-grid" data-animate>
         <div class="about-photo">
           <img src="/Images/Headshot_Image.jpg" alt="Ryan Ahrari" class="headshot">
         </div>
@@ -98,7 +98,7 @@
 
   <section class="section section-alt" id="skills">
     <div class="container">
-      <h2 class="section-title">Technologies</h2>
+      <h2 class="section-title" data-animate>Technologies</h2>
       <div class="skills-grid">
         <span class="skill-tag">Python</span>
         <span class="skill-tag">C</span>
@@ -117,10 +117,10 @@
 
   <section class="section" id="projects">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
+      <h2 class="section-title" data-animate>Projects</h2>
+      <div class="projects-grid" data-stagger-container>
 
-        <div class="project-card">
+        <div class="project-card" data-stagger>
           <div class="project-logo">
             <img src="/Images/flair_logo_2020_FINAL_night_dpi72.png" alt="Flair Logo">
           </div>
@@ -129,7 +129,7 @@
           <a href="/Documents/Flair Project.pdf" class="project-link" target="_blank" rel="noopener noreferrer">View Paper &rarr;</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-stagger>
           <div class="project-logo">
             <img src="/Images/SystemVerilog_logo.png" alt="SystemVerilog Logo">
           </div>
@@ -138,7 +138,7 @@
           <a href="https://git.ucsc.edu/rahrari/cse-225-final-project" class="project-link" target="_blank" rel="noopener noreferrer">View on GitLab &rarr;</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-stagger>
           <div class="project-logo">
             <img src="/Images/Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes Logo">
           </div>
@@ -147,7 +147,7 @@
           <a href="https://github.com/ryan-ahrari/Dell-Resilient-Kubernetes-Cluster-Availability" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
         </div>
 
-        <div class="project-card project-card-upcoming">
+        <div class="project-card project-card-upcoming" data-stagger>
           <span class="badge badge-in-dev">In Development</span>
           <div class="project-logo">
             <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,6 +177,7 @@
     </div>
   </footer>
 
+  <script src="/script.js" defer></script>
 </body>
 
 </html>
