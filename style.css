@@ -115,7 +115,7 @@ body {
    LAYOUT
    ============================================================================= */
 .section {
-    padding: 5rem 2rem;
+    padding: 12rem 2rem;
 }
 
 .section-alt {
@@ -130,7 +130,7 @@ body {
 .section-title {
     font-size:     1.75rem;
     font-weight:   700;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     text-align:    center;
 }
 
@@ -209,13 +209,13 @@ body {
 .hero {
     position:        relative;
     overflow:        hidden;
-    min-height:      90vh;
+    min-height:      100vh;
     display:         flex;
     flex-direction:  column;
     justify-content: center;
     align-items:     center;
     text-align:      center;
-    padding:         4rem 2rem;
+    padding:         10rem 2rem;
     background:      radial-gradient(ellipse at 65% 0%, rgba(99, 102, 241, 0.18) 0%, transparent 60%);
 }
 
@@ -238,7 +238,7 @@ body {
     color:          var(--text-muted);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom:  0.75rem;
+    margin-bottom:  1.5rem;
 }
 
 .hero h1 {
@@ -246,7 +246,7 @@ body {
     font-weight:    700;
     line-height:    1.05;
     letter-spacing: -0.03em;
-    margin-bottom:  0.75rem;
+    margin-bottom:  1.5rem;
 }
 
 .hero-title {
@@ -255,13 +255,13 @@ body {
     color:          var(--accent);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom:  0.5rem;
+    margin-bottom:  1rem;
 }
 
 .hero-sub {
     font-size:     0.95rem;
     color:         var(--text-muted);
-    margin-bottom: 1.75rem;
+    margin-bottom: 3rem;
 }
 
 .hero-bio {
@@ -269,7 +269,7 @@ body {
     font-size:     1.05rem;
     color:         var(--text-muted);
     line-height:   1.75;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4.5rem;
 }
 
 .hero-ctas {
@@ -277,12 +277,12 @@ body {
     gap:             1rem;
     flex-wrap:       wrap;
     justify-content: center;
-    margin-bottom:   2.5rem;
+    margin-bottom:   4rem;
 }
 
 .hero-links {
     display: flex;
-    gap:     1.5rem;
+    gap:     2rem;
 }
 
 .icon-link {
@@ -358,7 +358,7 @@ body {
 .about-grid {
     display:               grid;
     grid-template-columns: 1fr 2fr;
-    gap:                   4rem;
+    gap:                   8rem;
     align-items:           start;
 }
 
@@ -373,7 +373,7 @@ body {
     font-size:     0.975rem;
     color:         var(--text-muted);
     line-height:   1.85;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
 }
 
 .about-text strong {
@@ -386,8 +386,8 @@ body {
 }
 
 .education {
-    margin-top:    2rem;
-    padding:       1.25rem 1.5rem;
+    margin-top:    4rem;
+    padding:       2rem 2rem;
     background:    var(--surface);
     border-radius: 8px;
     border-left:   3px solid var(--accent);
@@ -446,7 +446,7 @@ body {
 .timeline-entry {
     position:       relative;
     padding-left:   2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 12rem;
 }
 
 .timeline-entry:last-child {
@@ -506,7 +506,7 @@ body {
 .skills-grid {
     display:         flex;
     flex-wrap:       wrap;
-    gap:             0.75rem;
+    gap:             1.25rem;
     justify-content: center;
 }
 
@@ -541,13 +541,13 @@ body {
 .projects-grid {
     display:               grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:                   1.5rem;
+    gap:                   3rem;
 }
 
 .project-card {
     display:        flex;
     flex-direction: column;
-    padding:        1.5rem;
+    padding:        3rem;
     background:     var(--surface);
     border:         1px solid var(--border);
     border-radius:  12px;
@@ -570,12 +570,12 @@ body {
     display:         flex;
     align-items:     center;
     justify-content: center;
-    height:          140px;
-    padding:         1.5rem;
+    height:          220px;
+    padding:         2.5rem;
     background:      #1a1a2e;
     border-radius:   8px;
     overflow:        hidden;
-    margin-bottom:   1.25rem;
+    margin-bottom:   2rem;
 }
 
 .project-logo img {
@@ -587,7 +587,7 @@ body {
 .project-card h3 {
     font-size:     0.975rem;
     line-height:   1.45;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-card h3 a {
@@ -611,7 +611,7 @@ body {
     display:         inline-flex;
     align-items:     center;
     gap:             0.35rem;
-    margin-top:      1.25rem;
+    margin-top:      2.5rem;
     font-size:       0.825rem;
     font-weight:     600;
     color:           var(--accent);
@@ -678,15 +678,15 @@ body {
 .contact-methods {
     display:        flex;
     flex-direction: column;
-    gap:            0.75rem;
-    margin-bottom:  3rem;
+    gap:            1.25rem;
+    margin-bottom:  5rem;
 }
 
 .contact-method {
     display:         flex;
     align-items:     center;
     gap:             1.5rem;
-    padding:         1rem 1.25rem;
+    padding:         1.5rem 2rem;
     background:      var(--surface);
     border:          1px solid var(--border);
     border-radius:   8px;
@@ -710,7 +710,7 @@ body {
 }
 
 .contact-form-wrapper {
-    padding:       2rem;
+    padding:       3.5rem;
     background:    var(--surface);
     border:        1px solid var(--border);
     border-radius: 12px;
@@ -724,7 +724,7 @@ body {
 }
 
 .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
 }
 
 .form-group label {
@@ -803,7 +803,7 @@ body {
    FOOTER
    ============================================================================= */
 .footer {
-    padding:    2rem;
+    padding:    4rem 2rem;
     background: var(--surface);
     border-top: 1px solid var(--border);
     text-align: center;
@@ -841,21 +841,30 @@ body {
     }
 
     .section {
-        padding: 3.5rem 1.25rem;
+        padding: 7rem 1.25rem;
     }
 
     .hero {
-        min-height: 75vh;
+        min-height: 100vh;
+        padding:    6rem 1.25rem;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap:                   2rem;
+        gap:                   4rem;
     }
 
     .headshot {
         max-width: 220px;
         margin:    0 auto;
+    }
+
+    .timeline-entry {
+        padding-bottom: 7rem;
+    }
+
+    .project-card {
+        padding: 2rem;
     }
 }
 
