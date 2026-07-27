@@ -57,11 +57,7 @@ body {
     height:     8px;
     margin:     -4px 0 0 -4px;
     background: var(--accent);
-    transition: opacity 0.2s, scale 0.1s;
-}
-
-.cursor-dot.cursor-click {
-    scale: 0.6;
+    transition: opacity 0.2s;
 }
 
 .cursor-ring {

@@ -18,14 +18,23 @@ const cursorDot  = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
 
 if (cursorDot && cursorRing && window.matchMedia('(hover: hover)').matches) {
-    let cursorX = 0, cursorY = 0;
-    let ringX   = 0, ringY   = 0;
+    let cursorX    = 0, cursorY    = 0;
+    let ringX      = 0, ringY      = 0;
+    let isClicking = false;
+
+    function updateDot() {
+        const scale = isClicking ? 0.6 : 1;
+        cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px) scale(${scale})`;
+    }
 
     document.addEventListener('mousemove', (e) => {
         cursorX = e.clientX;
         cursorY = e.clientY;
-        cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        updateDot();
     });
+
+    document.addEventListener('mousedown', () => { isClicking = true;  updateDot(); });
+    document.addEventListener('mouseup',   () => { isClicking = false; updateDot(); });
 
     (function animateRing() {
         ringX += (cursorX - ringX) * 0.1;
@@ -34,14 +43,11 @@ if (cursorDot && cursorRing && window.matchMedia('(hover: hover)').matches) {
         requestAnimationFrame(animateRing);
     })();
 
-    document.querySelectorAll('a, button, .project-card, .skill-tag, .contact-method, input, textarea')
+    document.querySelectorAll('a, button, .project-card, .contact-method, input, textarea')
         .forEach(el => {
             el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor-hover'));
         });
-
-    document.addEventListener('mousedown', () => cursorDot.classList.add('cursor-click'));
-    document.addEventListener('mouseup',   () => cursorDot.classList.remove('cursor-click'));
 }
 
 // =============================================================================
