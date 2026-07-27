@@ -691,7 +691,7 @@ body {
 .timeline-entry {
     position: relative;
     padding-left: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
 }
 
 .timeline-entry:last-child {
@@ -745,49 +745,6 @@ body {
     line-height: 1.8;
 }
 
-.timeline-bullets {
-    list-style: none;
-    margin-top: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-}
-
-.timeline-bullets li {
-    position: relative;
-    padding-left: 1.1rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.75;
-}
-
-.timeline-bullets li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.65rem;
-    top: 0.2rem;
-}
-
-.timeline-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1.1rem;
-}
-
-.timeline-tag {
-    padding: 0.2rem 0.65rem;
-    background: rgba(99, 102, 241, 0.08);
-    border: 1px solid rgba(99, 102, 241, 0.22);
-    border-radius: 4px;
-    font-size: 0.7rem;
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
 
 /* === Responsive === */
 @media (max-width: 768px) {
