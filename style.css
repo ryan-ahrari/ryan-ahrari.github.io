@@ -666,8 +666,6 @@ body {
 /* === Experience Timeline === */
 .timeline {
     position: relative;
-    max-width: 700px;
-    margin: 0 auto;
     padding-left: 2rem;
 }
 
