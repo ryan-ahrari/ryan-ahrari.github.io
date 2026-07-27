@@ -1,10 +1,7 @@
-// === 1. Scroll animations (fade + slide-up) ===
+// === 1. Scroll animations (fade + slide-up, retriggerable) ===
 const animateObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            animateObserver.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('visible', entry.isIntersecting);
     });
 }, { threshold: 0.1 });
 
@@ -17,7 +14,10 @@ const staggerObserver = new IntersectionObserver((entries) => {
             entry.target.querySelectorAll('[data-stagger]').forEach((el, i) => {
                 setTimeout(() => el.classList.add('visible'), i * 110);
             });
-            staggerObserver.unobserve(entry.target);
+        } else {
+            entry.target.querySelectorAll('[data-stagger]').forEach(el => {
+                el.classList.remove('visible');
+            });
         }
     });
 }, { threshold: 0.1 });
@@ -85,7 +85,10 @@ if (skillsGrid) {
                 entry.target.querySelectorAll('.skill-tag').forEach((tag, i) => {
                     setTimeout(() => tag.classList.add('visible'), i * 55);
                 });
-                skillObserver.unobserve(entry.target);
+            } else {
+                entry.target.querySelectorAll('.skill-tag').forEach(tag => {
+                    tag.classList.remove('visible');
+                });
             }
         });
     }, { threshold: 0.2 });
