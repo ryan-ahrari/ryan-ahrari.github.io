@@ -653,6 +653,28 @@ body {
 /* =============================================================================
    CONTACT
    ============================================================================= */
+.contact-section {
+    min-height:  calc(100vh - 60px - 80px);
+    padding-top: 4rem;
+}
+
+.contact-container {
+    max-width: 680px;
+}
+
+.contact-intro {
+    font-size:     0.975rem;
+    color:         var(--text-muted);
+    line-height:   1.75;
+    margin-bottom: 2.5rem;
+}
+
+.form-response {
+    margin-top: 1rem;
+    font-size:  0.9rem;
+}
+
+
 .contact-methods {
     display:        flex;
     flex-direction: column;
@@ -743,6 +765,38 @@ body {
 .form-group textarea {
     resize:     vertical;
     min-height: 140px;
+}
+
+/* =============================================================================
+   REFERENCES
+   ============================================================================= */
+.citations-list {
+    list-style:     decimal;
+    padding-left:   1.5rem;
+    display:        flex;
+    flex-direction: column;
+    gap:            1.5rem;
+}
+
+.citations-list li {
+    font-size:   0.925rem;
+    color:       var(--text-muted);
+    line-height: 1.8;
+}
+
+.citations-list em {
+    color:      var(--text);
+    font-style: italic;
+}
+
+.citations-list a {
+    color:           var(--accent);
+    text-decoration: none;
+    transition:      color 0.2s;
+}
+
+.citations-list a:hover {
+    color: var(--accent-hover);
 }
 
 /* =============================================================================
