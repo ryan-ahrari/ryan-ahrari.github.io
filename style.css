@@ -57,11 +57,11 @@ body {
     height:     8px;
     margin:     -4px 0 0 -4px;
     background: var(--accent);
-    transition: opacity 0.2s, transform 0.1s;
+    transition: opacity 0.2s, scale 0.1s;
 }
 
 .cursor-dot.cursor-click {
-    transform: scale(0.6) !important;
+    scale: 0.6;
 }
 
 .cursor-ring {
@@ -500,40 +500,6 @@ body {
     line-height: 1.8;
 }
 
-/* =============================================================================
-   SKILLS
-   ============================================================================= */
-.skills-grid {
-    display:         flex;
-    flex-wrap:       wrap;
-    gap:             1.25rem;
-    justify-content: center;
-}
-
-.skill-tag {
-    padding:        0.5rem 1.25rem;
-    background:     var(--bg);
-    border:         1px solid var(--border);
-    border-radius:  9999px;
-    font-size:      0.85rem;
-    color:          var(--text-muted);
-    cursor:         default;
-    opacity:        0;
-    transform:      scale(0.88) translateY(8px);
-    transition:     opacity 0.4s ease, transform 0.4s ease,
-                    border-color 0.2s, color 0.2s, background 0.2s;
-}
-
-.skill-tag.visible {
-    opacity:   1;
-    transform: scale(1) translateY(0);
-}
-
-.skill-tag:hover {
-    border-color: var(--accent);
-    color:        var(--accent);
-    background:   rgba(99, 102, 241, 0.08);
-}
 
 /* =============================================================================
    PROJECTS

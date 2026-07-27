@@ -304,30 +304,6 @@ const staggerObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('[data-stagger-container]').forEach(el => staggerObserver.observe(el));
 
 // =============================================================================
-// SKILL TAG ANIMATION
-// =============================================================================
-
-const skillsGrid = document.querySelector('.skills-grid');
-
-if (skillsGrid) {
-    const skillTagObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const tags = entry.target.querySelectorAll('.skill-tag');
-
-            if (entry.isIntersecting) {
-                tags.forEach((tag, i) => {
-                    setTimeout(() => tag.classList.add('visible'), i * 55);
-                });
-            } else {
-                tags.forEach(tag => tag.classList.remove('visible'));
-            }
-        });
-    }, { threshold: 0.2 });
-
-    skillTagObserver.observe(skillsGrid);
-}
-
-// =============================================================================
 // 3D CARD TILT
 // =============================================================================
 
